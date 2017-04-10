@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		C8D246FD1E9BCF9200FEA17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */; };
-		C8D246FF1E9BCF9200FEA17C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FE1E9BCF9200FEA17C /* ViewController.swift */; };
+		C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */; };
 		C8D247021E9BCF9200FEA17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D247001E9BCF9200FEA17C /* Main.storyboard */; };
 		C8D247041E9BCF9200FEA17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8D247031E9BCF9200FEA17C /* Assets.xcassets */; };
 		C8D247071E9BCF9200FEA17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D247051E9BCF9200FEA17C /* LaunchScreen.storyboard */; };
+		C8D2470F1E9BD12900FEA17C /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */; };
+		C8D247131E9BD13600FEA17C /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247121E9BD13600FEA17C /* ErrorViewController.swift */; };
+		C8D247151E9BD13A00FEA17C /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247141E9BD13A00FEA17C /* WaitingViewController.swift */; };
+		C8D247171E9BD14100FEA17C /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247161E9BD14100FEA17C /* CompleteViewController.swift */; };
+		C8D247191E9BD25900FEA17C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247181E9BD25900FEA17C /* SignupViewController.swift */; };
+		C8D2471B1E9BD55700FEA17C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */; };
+		C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C8D246F91E9BCF9200FEA17C /* Coordinactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8D246FE1E9BCF9200FEA17C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C8D247011E9BCF9200FEA17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8D247031E9BCF9200FEA17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8D247061E9BCF9200FEA17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8D247081E9BCF9200FEA17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
+		C8D247121E9BD13600FEA17C /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		C8D247141E9BD13A00FEA17C /* WaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
+		C8D247161E9BD14100FEA17C /* CompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		C8D247181E9BD25900FEA17C /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +69,14 @@
 			isa = PBXGroup;
 			children = (
 				C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */,
-				C8D246FE1E9BCF9200FEA17C /* ViewController.swift */,
+				C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */,
+				C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */,
+				C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */,
+				C8D247181E9BD25900FEA17C /* SignupViewController.swift */,
+				C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */,
+				C8D247141E9BD13A00FEA17C /* WaitingViewController.swift */,
+				C8D247121E9BD13600FEA17C /* ErrorViewController.swift */,
+				C8D247161E9BD14100FEA17C /* CompleteViewController.swift */,
 				C8D247001E9BCF9200FEA17C /* Main.storyboard */,
 				C8D247031E9BCF9200FEA17C /* Assets.xcassets */,
 				C8D247051E9BCF9200FEA17C /* LaunchScreen.storyboard */,
@@ -137,7 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8D246FF1E9BCF9200FEA17C /* ViewController.swift in Sources */,
+				C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */,
+				C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */,
+				C8D247191E9BD25900FEA17C /* SignupViewController.swift in Sources */,
+				C8D247151E9BD13A00FEA17C /* WaitingViewController.swift in Sources */,
+				C8D247131E9BD13600FEA17C /* ErrorViewController.swift in Sources */,
+				C8D247171E9BD14100FEA17C /* CompleteViewController.swift in Sources */,
+				C8D2471B1E9BD55700FEA17C /* AppCoordinator.swift in Sources */,
+				C8D2470F1E9BD12900FEA17C /* UsernameViewController.swift in Sources */,
 				C8D246FD1E9BCF9200FEA17C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +330,7 @@
 				C8D2470D1E9BCF9200FEA17C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
