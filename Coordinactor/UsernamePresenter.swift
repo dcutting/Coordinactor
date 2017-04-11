@@ -3,16 +3,16 @@ class UsernamePresenter {
     let validMessage = "Username is valid"
     
     func prepareDefault() -> UsernameViewData {
-        return UsernameViewData(text: "", messages: "")
+        return UsernameViewData(text: "", messages: "", isValid: false)
     }
     
     func prepare(status: UsernameInteractor.ValidateStatus) -> UsernameViewData {
         switch status {
         case let .valid(username):
-            return UsernameViewData(text: username, messages: validMessage)
+            return UsernameViewData(text: username, messages: validMessage, isValid: true)
         case let .invalid(username, reasons):
             let messages = makeMessages(for: reasons)
-            return UsernameViewData(text: username, messages: messages)
+            return UsernameViewData(text: username, messages: messages, isValid: false)
         }
     }
     

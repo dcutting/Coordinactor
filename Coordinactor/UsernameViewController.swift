@@ -3,6 +3,7 @@ import UIKit
 struct UsernameViewData {
     let text: String
     let messages: String
+    let isValid: Bool
 }
 
 protocol UsernameViewControllerDelegate: class {
@@ -17,6 +18,7 @@ class UsernameViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var messagesTextView: UITextView!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,5 +52,6 @@ class UsernameViewController: UIViewController {
         if viewData.messages != messagesTextView.text {
             messagesTextView.text = viewData.messages
         }
+        nextButton.isEnabled = viewData.isValid
     }
 }

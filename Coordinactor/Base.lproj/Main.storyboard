@@ -157,6 +157,7 @@
                     </view>
                     <connections>
                         <outlet property="messagesTextView" destination="uMB-xU-rlr" id="Om8-Ge-GDJ"/>
+                        <outlet property="nextButton" destination="51v-EC-ALZ" id="k0r-Az-RbR"/>
                         <outlet property="usernameTextField" destination="aF9-fu-zMP" id="HOJ-sD-kS1"/>
                     </connections>
                 </viewController>
