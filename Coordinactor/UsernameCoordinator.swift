@@ -44,6 +44,10 @@ extension UsernameCoordinator: UsernameViewControllerDelegate {
     }
     
     func didChangeUsername(to text: String) {
+        updateUsername(text: text)
+    }
+    
+    private func updateUsername(text: String) {
         interactor.updateUsername(text: text) { validateStatus in
             let viewData = presenter.prepare(status: validateStatus)
             viewController.viewData = viewData
@@ -51,6 +55,10 @@ extension UsernameCoordinator: UsernameViewControllerDelegate {
     }
     
     func didTapNext(with text: String) {
+        submitUsername(text: text)
+    }
+    
+    private func submitUsername(text: String) {
         showLoading()
         interactor.submitUsername(text: text) { [weak self] submitStatus in
             guard let `self` = self else { return }
