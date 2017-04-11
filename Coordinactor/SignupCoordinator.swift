@@ -12,8 +12,9 @@ class SignupCoordinator {
     let rootViewController: UIViewController
     var navigationController: UINavigationController?
     
-    let usernameInteractor = UsernameInteractor(signupService: MockSignupService())
-    let usernamePresenter = UsernamePresenter()
+    var usernameInteractor: UsernameInteractor?
+    var usernamePresenter: UsernamePresenter?
+    var usernameViewController: UsernameViewController?
     
     let errorPresenter = ErrorPresenter()
     
@@ -58,33 +59,42 @@ extension SignupCoordinator: SignupViewControllerDelegate {
     }
     
     func didTapStart() {
+        makeUsernameModule()
+        guard let usernameViewController = usernameViewController else { return }
+        progress(to: usernameViewController)
+    }
+    
+    func makeUsernameModule() {
+        let signupService = MockSignupService()
+        usernameInteractor = UsernameInteractor(signupService: signupService)
+        usernamePresenter = UsernamePresenter()
+
         guard let usernameViewController = loadViewController(named: "username") as? UsernameViewController else { return }
         usernameViewController.delegate = self
-        progress(to: usernameViewController)
+        self.usernameViewController = usernameViewController
     }
 }
 
 extension SignupCoordinator: UsernameViewControllerDelegate {
     
-    func viewReady(completion: @escaping (UsernameViewData) -> Void) {
-        let viewData = usernamePresenter.prepareDefault()
-        completion(viewData)
+    func viewReady() {
+        let viewData = usernamePresenter?.prepareDefault()
+        usernameViewController?.viewData = viewData
     }
     
-    func didChangeUsername(to text: String, completion: @escaping (UsernameViewData) -> Void) {
-        usernameInteractor.udpateUsername(text: text) { validateStatus in
-            let viewData = usernamePresenter.prepare(status: validateStatus)
-            completion(viewData)
+    func didChangeUsername(to text: String) {
+        usernameInteractor?.updateUsername(text: text) { validateStatus in
+            let viewData = usernamePresenter?.prepare(status: validateStatus)
+            usernameViewController?.viewData = viewData
         }
     }
     
-    func didTapNext(with text: String, completion: @escaping (UsernameViewData) -> Void) {
-        
+    func didTapNext(with text: String) {
         showLoading()
-
-        usernameInteractor.submitUsername(text: text) { [weak self] submitStatus in
+        usernameInteractor?.submitUsername(text: text) { [weak self] submitStatus in
             guard let `self` = self else { return }
             self.hideLoading()
+            self.disposeUsernameModule()
             switch submitStatus {
             case .success:
                 self.success()
@@ -92,6 +102,12 @@ extension SignupCoordinator: UsernameViewControllerDelegate {
                 self.error(error)
             }
         }
+    }
+    
+    private func disposeUsernameModule() {
+        usernameViewController = nil
+        usernameInteractor = nil
+        usernamePresenter = nil
     }
     
     private func showLoading() {

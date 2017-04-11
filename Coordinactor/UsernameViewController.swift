@@ -7,9 +7,9 @@ struct UsernameViewData {
 }
 
 protocol UsernameViewControllerDelegate: class {
-    func viewReady(completion: @escaping (UsernameViewData) -> Void)
-    func didChangeUsername(to text: String, completion: @escaping (UsernameViewData) -> Void)
-    func didTapNext(with text: String, completion: @escaping (UsernameViewData) -> Void)
+    func viewReady()
+    func didChangeUsername(to text: String)
+    func didTapNext(with text: String)
 }
 
 class UsernameViewController: UIViewController {
@@ -20,38 +20,35 @@ class UsernameViewController: UIViewController {
     @IBOutlet weak var messagesTextView: UITextView!
     @IBOutlet weak var nextButton: UIButton!
     
+    var viewData: UsernameViewData? {
+        didSet {
+            refresh()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate?.viewReady { [weak self] viewData in
-            self?.refresh(viewData)
-        }
+        delegate?.viewReady()
     }
     
     @IBAction func didChangeUsername(_ sender: Any) {
-        let text = usernameText()
-        delegate?.didChangeUsername(to: text) { [weak self] viewData in
-            self?.refresh(viewData)
-        }
+        delegate?.didChangeUsername(to: usernameText())
     }
     
     @IBAction func didTapNext(_ sender: Any) {
-        let text = usernameText()
-        delegate?.didTapNext(with: text) { [weak self] viewData in
-            self?.refresh(viewData)
-        }
+        delegate?.didTapNext(with: usernameText())
     }
     
     private func usernameText() -> String {
         return usernameTextField.text ?? ""
     }
-    
-    private func refresh(_ viewData: UsernameViewData) {
+
+    private func refresh() {
+        guard let viewData = viewData else { preconditionFailure() }
         if viewData.text != usernameText() {
             usernameTextField.text = viewData.text
         }
-        if viewData.messages != messagesTextView.text {
-            messagesTextView.text = viewData.messages
-        }
+        messagesTextView.text = viewData.messages
         nextButton.isEnabled = viewData.isValid
     }
 }

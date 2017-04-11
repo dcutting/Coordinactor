@@ -28,7 +28,7 @@ class UsernameInteractor {
         self.signupService = signupService
     }
     
-    func udpateUsername(text: String, completion: (ValidateStatus) -> Void) {
+    func updateUsername(text: String, completion: (ValidateStatus) -> Void) {
         let status = validate(username: text)
         completion(status)
     }
