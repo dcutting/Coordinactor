@@ -131,25 +131,37 @@
                                     <action selector="didTapNext:" destination="gCv-ad-Jep" eventType="touchUpInside" id="gMZ-1U-ydp"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uMB-xU-rlr">
+                                <rect key="frame" x="16" y="87" width="343" height="522"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aF9-fu-zMP" firstAttribute="leading" secondItem="fkf-GD-Ukx" secondAttribute="leadingMargin" id="7co-SB-3ZU"/>
+                            <constraint firstItem="uMB-xU-rlr" firstAttribute="top" secondItem="aF9-fu-zMP" secondAttribute="bottom" constant="8" id="8YZ-QG-NOZ"/>
                             <constraint firstItem="51v-EC-ALZ" firstAttribute="trailing" secondItem="fkf-GD-Ukx" secondAttribute="trailingMargin" id="Czg-CQ-Y0e"/>
                             <constraint firstItem="Y0o-4C-7JJ" firstAttribute="top" secondItem="51v-EC-ALZ" secondAttribute="bottom" constant="20" id="Fz2-vP-3AV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aF9-fu-zMP" secondAttribute="trailing" id="KZN-Ix-5c8"/>
+                            <constraint firstItem="51v-EC-ALZ" firstAttribute="top" secondItem="uMB-xU-rlr" secondAttribute="bottom" constant="8" id="RuH-jT-47g"/>
+                            <constraint firstItem="uMB-xU-rlr" firstAttribute="trailing" secondItem="fkf-GD-Ukx" secondAttribute="trailingMargin" id="SxA-SA-8kv"/>
                             <constraint firstItem="gEH-aW-ZxS" firstAttribute="top" secondItem="OfE-zx-FLE" secondAttribute="bottom" id="SzF-vB-vg3"/>
+                            <constraint firstItem="uMB-xU-rlr" firstAttribute="leading" secondItem="fkf-GD-Ukx" secondAttribute="leadingMargin" id="U2S-JZ-Hvf"/>
                             <constraint firstItem="gEH-aW-ZxS" firstAttribute="leading" secondItem="fkf-GD-Ukx" secondAttribute="leadingMargin" id="aCo-gl-Vig"/>
                             <constraint firstItem="aF9-fu-zMP" firstAttribute="top" secondItem="gEH-aW-ZxS" secondAttribute="bottom" constant="8" id="z6L-Pf-vWi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="messagesTextView" destination="uMB-xU-rlr" id="Om8-Ge-GDJ"/>
                         <outlet property="usernameTextField" destination="aF9-fu-zMP" id="HOJ-sD-kS1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEy-Xd-q4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="80"/>
+            <point key="canvasLocation" x="189.59999999999999" y="79.610194902548727"/>
         </scene>
         <!--Complete View Controller-->
         <scene sceneID="B5S-sm-Weg">
@@ -242,19 +254,33 @@
                                     <action selector="didTapRestart:" destination="ANf-8K-BDf" eventType="touchUpInside" id="2Ue-Ut-Mkr"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tph-4z-xaC">
+                                <rect key="frame" x="16" y="49" width="343" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9MQ-B7-jSu" firstAttribute="top" secondItem="HPv-lP-T5L" secondAttribute="bottom" id="4lW-va-FT4"/>
+                            <constraint firstItem="1se-tE-sPg" firstAttribute="top" secondItem="Tph-4z-xaC" secondAttribute="bottom" constant="8" id="5tC-Jo-lyk"/>
                             <constraint firstItem="jll-1s-ZZQ" firstAttribute="top" secondItem="1se-tE-sPg" secondAttribute="bottom" constant="20" id="J9X-7Q-oMM"/>
+                            <constraint firstItem="Tph-4z-xaC" firstAttribute="trailing" secondItem="bSt-OD-0yj" secondAttribute="trailingMargin" id="LDY-fR-Jml"/>
+                            <constraint firstItem="Tph-4z-xaC" firstAttribute="leading" secondItem="bSt-OD-0yj" secondAttribute="leadingMargin" id="PS2-Jx-Qvp"/>
                             <constraint firstItem="1se-tE-sPg" firstAttribute="trailing" secondItem="bSt-OD-0yj" secondAttribute="trailingMargin" id="T00-3u-bbq"/>
+                            <constraint firstItem="Tph-4z-xaC" firstAttribute="top" secondItem="9MQ-B7-jSu" secondAttribute="bottom" constant="8" id="f47-HW-PVQ"/>
                             <constraint firstItem="9MQ-B7-jSu" firstAttribute="leading" secondItem="bSt-OD-0yj" secondAttribute="leadingMargin" id="rm7-lP-WQd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageTextView" destination="Tph-4z-xaC" id="Qba-6J-20U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuS-02-01b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="786"/>
+            <point key="canvasLocation" x="1000.8" y="785.75712143928047"/>
         </scene>
     </scenes>
 </document>

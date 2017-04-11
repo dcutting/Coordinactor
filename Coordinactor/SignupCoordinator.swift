@@ -11,6 +11,11 @@ class SignupCoordinator {
     
     let rootViewController: UIViewController
     
+    let usernameInteractor = UsernameInteractor()
+    let usernamePresenter = UsernamePresenter()
+    
+    let errorPresenter = ErrorPresenter()
+    
     init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
     }
@@ -48,29 +53,30 @@ extension SignupCoordinator: SignupViewControllerDelegate {
 
 extension SignupCoordinator: UsernameViewControllerDelegate {
     
-    func didChangeUsername(to text: String, completion: (UsernameViewData) -> Void) {
-        let interactor = UsernameInteractor()
-        interactor.udpateUsername(text: text) { status in
-            let presenter = UsernamePresenter()
-            let viewData = presenter.prepare(status: status)
+    func viewReady(completion: @escaping (UsernameViewData) -> Void) {
+        let viewData = usernamePresenter.prepareDefault()
+        completion(viewData)
+    }
+    
+    func didChangeUsername(to text: String, completion: @escaping (UsernameViewData) -> Void) {
+        usernameInteractor.udpateUsername(text: text) { validateStatus in
+            let viewData = usernamePresenter.prepare(status: validateStatus)
             completion(viewData)
         }
     }
     
-    func didTapNext() {
+    func didTapNext(with text: String, completion: @escaping (UsernameViewData) -> Void) {
         guard let waitingViewController = loadViewController(named: "waiting") as? WaitingViewController else { return }
         progress(to: waitingViewController)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.succeedOrFail()
-        }
-    }
-    
-    func succeedOrFail() {
-        if 0 == arc4random() % 2 {
-            success()
-        } else {
-            failure()
+
+        usernameInteractor.submitUsername(text: text) { [weak self] submitStatus in
+            guard let `self` = self else { return }
+            switch submitStatus {
+            case .success:
+                self.success()
+            case let .error(error):
+                self.error(error)
+            }
         }
     }
     
@@ -80,8 +86,9 @@ extension SignupCoordinator: UsernameViewControllerDelegate {
         progress(to: completeViewController)
     }
     
-    func failure() {
+    func error(_ error: UsernameInteractor.Error) {
         guard let errorViewController = loadViewController(named: "error") as? ErrorViewController else { return }
+        errorViewController.message = errorPresenter.prepare(error: error)
         errorViewController.delegate = self
         progress(to: errorViewController)
     }
