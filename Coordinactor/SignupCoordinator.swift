@@ -12,7 +12,7 @@ class SignupCoordinator {
     let rootViewController: UIViewController
     var navigationController: UINavigationController?
     
-    let usernameInteractor = UsernameInteractor()
+    let usernameInteractor = UsernameInteractor(signupService: MockSignupService())
     let usernamePresenter = UsernamePresenter()
     
     let errorPresenter = ErrorPresenter()

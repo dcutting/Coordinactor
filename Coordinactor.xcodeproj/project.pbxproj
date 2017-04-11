@@ -22,6 +22,8 @@
 		C8D2471F1E9BE81800FEA17C /* UsernameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */; };
 		C8D247211E9CC59B00FEA17C /* UsernamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247201E9CC59B00FEA17C /* UsernamePresenter.swift */; };
 		C8D247231E9CE58100FEA17C /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */; };
+		C8D2472C1E9CEBE100FEA17C /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2472B1E9CEBE100FEA17C /* SignupService.swift */; };
+		C8D2472E1E9CEE2700FEA17C /* MockSignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2472D1E9CEE2700FEA17C /* MockSignupService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameInteractor.swift; sourceTree = "<group>"; };
 		C8D247201E9CC59B00FEA17C /* UsernamePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernamePresenter.swift; sourceTree = "<group>"; };
 		C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		C8D2472B1E9CEBE100FEA17C /* SignupService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
+		C8D2472D1E9CEE2700FEA17C /* MockSignupService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignupService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		C8D247241E9CE69400FEA17C /* Sign up */ = {
 			isa = PBXGroup;
 			children = (
+				C8D2472F1E9CEE2C00FEA17C /* Services */,
 				C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */,
 				C8D247291E9CE6BE00FEA17C /* Start */,
 				C8D247251E9CE6A200FEA17C /* Username */,
@@ -148,6 +153,15 @@
 				C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		C8D2472F1E9CEE2C00FEA17C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C8D2472B1E9CEBE100FEA17C /* SignupService.swift */,
+				C8D2472D1E9CEE2700FEA17C /* MockSignupService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,12 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */,
+				C8D2472E1E9CEE2700FEA17C /* MockSignupService.swift in Sources */,
 				C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */,
 				C8D247191E9BD25900FEA17C /* SignupViewController.swift in Sources */,
 				C8D247151E9BD13A00FEA17C /* WaitingViewController.swift in Sources */,
 				C8D247131E9BD13600FEA17C /* ErrorViewController.swift in Sources */,
 				C8D247231E9CE58100FEA17C /* ErrorPresenter.swift in Sources */,
 				C8D247171E9BD14100FEA17C /* CompleteViewController.swift in Sources */,
+				C8D2472C1E9CEBE100FEA17C /* SignupService.swift in Sources */,
 				C8D2471B1E9BD55700FEA17C /* AppCoordinator.swift in Sources */,
 				C8D2470F1E9BD12900FEA17C /* UsernameViewController.swift in Sources */,
 				C8D2471F1E9BE81800FEA17C /* UsernameInteractor.swift in Sources */,

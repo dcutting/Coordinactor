@@ -1,9 +1,7 @@
-import Foundation
-
 class UsernameInteractor {
     
     enum Error: Swift.Error {
-        case network
+        case service(Swift.Error)
     }
     
     enum InvalidReason {
@@ -23,6 +21,12 @@ class UsernameInteractor {
     
     let minimumLength = 3
     let disallowedCharacters = "!@# $%".characters
+    
+    let signupService: SignupService
+    
+    init(signupService: SignupService) {
+        self.signupService = signupService
+    }
     
     func udpateUsername(text: String, completion: (ValidateStatus) -> Void) {
         let status = validate(username: text)
@@ -47,17 +51,14 @@ class UsernameInteractor {
     }
     
     func submitUsername(text: String, completion: @escaping (SubmitStatus) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.completeSubmit(text: text, completion: completion)
-        }
-    }
-    
-    private func completeSubmit(text: String, completion: (SubmitStatus) -> Void) {
-        if 0 == arc4random() % 2 {
-            completion(.success)
-        } else {
-            let error = UsernameInteractor.Error.network
-            completion(.error(error))
+        signupService.signup(username: text) { status in
+            switch status {
+            case .success:
+                completion(.success)
+            case let .error(error):
+                let error = UsernameInteractor.Error.service(error)
+                completion(.error(error))
+            }
         }
     }
 }
