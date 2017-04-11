@@ -4,7 +4,6 @@ class AppCoordinator {
     
     let window: UIWindow
     
-    var welcomeViewController: WelcomeViewController?
     var signupCoordinator: SignupCoordinator?
     
     init(window: UIWindow) {
@@ -12,9 +11,13 @@ class AppCoordinator {
     }
     
     func start() {
+        showWelcomeScreen()
+    }
+    
+    func showWelcomeScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        welcomeViewController = storyboard.instantiateViewController(withIdentifier: "welcome") as? WelcomeViewController
-        welcomeViewController?.delegate = self
+        guard let welcomeViewController = storyboard.instantiateViewController(withIdentifier: "welcome") as? WelcomeViewController else { preconditionFailure() }
+        welcomeViewController.delegate = self
         window.rootViewController = welcomeViewController
     }
 }
@@ -22,28 +25,28 @@ class AppCoordinator {
 extension AppCoordinator: WelcomeViewControllerDelegate {
     
     func didTapSignup() {
-        startSignup()
+        startSignupCoordinator()
     }
 
-    private func startSignup() {
-        guard let rootViewController = welcomeViewController else { return }
+    private func startSignupCoordinator() {
+        guard let rootViewController = window.rootViewController else { preconditionFailure() }
         signupCoordinator = SignupCoordinator(rootViewController: rootViewController)
         signupCoordinator?.delegate = self
         signupCoordinator?.start()
+    }
+    
+    fileprivate func finishSignupCoordinator() {
+        signupCoordinator = nil
     }
 }
 
 extension AppCoordinator: SignupCoordinatorDelegate {
     
-    func didCancel() {
-        finishSignup()
+    func didSucceed() {
+        finishSignupCoordinator()
     }
     
-    func didSucceed() {
-        finishSignup()
-    }
-
-    private func finishSignup() {
-        signupCoordinator = nil
+    func didCancel() {
+        finishSignupCoordinator()
     }
 }

@@ -83,6 +83,7 @@
 				C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */,
 				C8D2472A1E9CE6CE00FEA17C /* App */,
 				C8D247241E9CE69400FEA17C /* Sign up */,
+				C8D2472F1E9CEE2C00FEA17C /* Services */,
 				C8D247001E9BCF9200FEA17C /* Main.storyboard */,
 				C8D247031E9BCF9200FEA17C /* Assets.xcassets */,
 				C8D247051E9BCF9200FEA17C /* LaunchScreen.storyboard */,
@@ -94,7 +95,6 @@
 		C8D247241E9CE69400FEA17C /* Sign up */ = {
 			isa = PBXGroup;
 			children = (
-				C8D2472F1E9CEE2C00FEA17C /* Services */,
 				C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */,
 				C8D247291E9CE6BE00FEA17C /* Start */,
 				C8D247251E9CE6A200FEA17C /* Username */,

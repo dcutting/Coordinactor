@@ -18,11 +18,16 @@ class UsernameCoordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        viewController = storyboard.instantiateViewController(withIdentifier: "username") as! UsernameViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "username") as? UsernameViewController else { preconditionFailure() }
+        self.viewController = viewController
         viewController.delegate = self
     }
 
     func start() {
+        showUsernameScreen()
+    }
+    
+    private func showUsernameScreen() {
         navigationController.pushViewController(viewController, animated: true)
     }
 }
@@ -30,6 +35,10 @@ class UsernameCoordinator {
 extension UsernameCoordinator: UsernameViewControllerDelegate {
     
     func viewReady() {
+        showDefault()
+    }
+    
+    private func showDefault() {
         let viewData = presenter.prepareDefault()
         viewController.viewData = viewData
     }

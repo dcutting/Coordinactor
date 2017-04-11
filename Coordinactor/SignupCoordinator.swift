@@ -1,8 +1,8 @@
 import UIKit
 
 protocol SignupCoordinatorDelegate: class {
-    func didCancel()
     func didSucceed()
+    func didCancel()
 }
 
 class SignupCoordinator {
@@ -10,60 +10,80 @@ class SignupCoordinator {
     weak var delegate: SignupCoordinatorDelegate?
     
     let rootViewController: UIViewController
-    var navigationController: UINavigationController!
+    let navigationController = UINavigationController()
     
     var usernameCoordinator: UsernameCoordinator?
     
-    let errorPresenter = ErrorPresenter()
-    
     init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
+        guard let signupViewController = loadViewController(named: "signup") as? SignupViewController else { preconditionFailure() }
+        signupViewController.delegate = self
+        navigationController.viewControllers = [signupViewController]
     }
     
     func start() {
-        guard let signupViewController = loadViewController(named: "signup") as? SignupViewController else { return }
-        signupViewController.delegate = self
-        
-        navigationController = UINavigationController(rootViewController: signupViewController)
-        rootViewController.present(navigationController, animated: true)
+        presentSignup()
     }
+}
+
+extension SignupCoordinator {
     
-    func loadViewController(named name: String) -> UIViewController? {
+    fileprivate func loadViewController(named name: String) -> UIViewController? {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: name)
     }
     
-    func progress(to viewController: UIViewController) {
+    fileprivate func presentSignup() {
+        rootViewController.present(navigationController, animated: true)
+    }
+    
+    fileprivate func dismissSignup() {
+        navigationController.dismiss(animated: true)
+    }
+    
+    fileprivate func restartSignup() {
+        finishUsernameCoordinator()
+        navigationController.popToRootViewController(animated: true)
+    }
+    
+    fileprivate func progress(to viewController: UIViewController) {
         navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    func complete() {
-        rootViewController.dismiss(animated: true)
-        delegate?.didSucceed()
-    }
-    
-    func cancel() {
-        rootViewController.dismiss(animated: true)
-        delegate?.didCancel()
     }
 }
 
 extension SignupCoordinator: SignupViewControllerDelegate {
     
     func didTapCancel() {
-        cancel()
+        cancelSignup()
     }
     
+    private func cancelSignup() {
+        dismissSignup()
+        delegate?.didCancel()
+    }
+
     func didTapStart() {
+        startUsernameCoordinator()
+    }
+    
+    private func startUsernameCoordinator() {
         usernameCoordinator = UsernameCoordinator(navigationController: navigationController)
         usernameCoordinator?.delegate = self
         usernameCoordinator?.start()
+    }
+    
+    fileprivate func finishUsernameCoordinator() {
+        usernameCoordinator = nil
     }
 }
 
 extension SignupCoordinator: UsernameCoordinatorDelegate {
     
     func didSucceed() {
+        showCompleteScreen()
+    }
+    
+    private func showCompleteScreen() {
         guard let completeViewController = loadViewController(named: "complete") as? CompleteViewController else { return }
         completeViewController.navigationItem.setHidesBackButton(true, animated: true)
         completeViewController.delegate = self
@@ -71,8 +91,12 @@ extension SignupCoordinator: UsernameCoordinatorDelegate {
     }
     
     func didFail(with error: Error) {
+        showErrorScreen(error: error)
+    }
+    
+    private func showErrorScreen(error: Error) {
         guard let errorViewController = loadViewController(named: "error") as? ErrorViewController else { return }
-        errorViewController.message = errorPresenter.prepare(error: error)
+        errorViewController.message = ErrorPresenter().prepare(error: error)
         errorViewController.navigationItem.setHidesBackButton(true, animated: true)
         errorViewController.delegate = self
         progress(to: errorViewController)
@@ -82,13 +106,18 @@ extension SignupCoordinator: UsernameCoordinatorDelegate {
 extension SignupCoordinator: ErrorViewControllerDelegate {
     
     func didTapRestart() {
-        navigationController?.popToRootViewController(animated: true)
+        restartSignup()
     }
 }
 
 extension SignupCoordinator: CompleteViewControllerDelegate {
 
     func didTapDone() {
-        complete()
+        completeSignup()
+    }
+
+    private func completeSignup() {
+        dismissSignup()
+        delegate?.didSucceed()
     }
 }
