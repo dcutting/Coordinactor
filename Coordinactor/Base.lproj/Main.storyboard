@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1y3-kQ-AsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1857" y="80"/>
+            <point key="canvasLocation" x="-1578" y="80"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -200,34 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxU-Nl-TKV" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="80"/>
-        </scene>
-        <!--Waiting View Controller-->
-        <scene sceneID="UMd-v9-Lgy">
-            <objects>
-                <viewController storyboardIdentifier="waiting" id="qg8-ky-TE7" customClass="WaitingViewController" customModule="Coordinactor" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RG4-cY-pwv"/>
-                        <viewControllerLayoutGuide type="bottom" id="YB0-1u-PAV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WPs-ub-96U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zSt-kh-ZnS">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zSt-kh-ZnS" firstAttribute="centerY" secondItem="WPs-ub-96U" secondAttribute="centerY" id="4da-wG-Vgw"/>
-                            <constraint firstItem="zSt-kh-ZnS" firstAttribute="centerX" secondItem="WPs-ub-96U" secondAttribute="centerX" id="P9o-oe-TCu"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rm3-Pi-ubX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1001" y="80"/>
+            <point key="canvasLocation" x="975" y="80"/>
         </scene>
         <!--Error View Controller-->
         <scene sceneID="akW-68-4le">
@@ -280,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuS-02-01b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="785.75712143928047"/>
+            <point key="canvasLocation" x="190" y="789"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,7 @@ class SignupCoordinator {
     weak var delegate: SignupCoordinatorDelegate?
     
     let rootViewController: UIViewController
+    var navigationController: UINavigationController?
     
     let usernameInteractor = UsernameInteractor()
     let usernamePresenter = UsernamePresenter()
@@ -23,7 +24,11 @@ class SignupCoordinator {
     func start() {
         guard let signupViewController = loadViewController(named: "signup") as? SignupViewController else { return }
         signupViewController.delegate = self
-        rootViewController.present(signupViewController, animated: true)
+        
+        let navigationController = UINavigationController(rootViewController: signupViewController)
+        rootViewController.present(navigationController, animated: true)
+        
+        self.navigationController = navigationController
     }
     
     func loadViewController(named name: String) -> UIViewController? {
@@ -32,16 +37,24 @@ class SignupCoordinator {
     }
     
     func progress(to viewController: UIViewController) {
-        rootViewController.dismiss(animated: false)
-        rootViewController.present(viewController, animated: false)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func complete() {
+        rootViewController.dismiss(animated: true)
+        delegate?.didSucceed()
+    }
+    
+    func cancel() {
+        rootViewController.dismiss(animated: true)
+        delegate?.didCancel()
     }
 }
 
 extension SignupCoordinator: SignupViewControllerDelegate {
     
     func didTapCancel() {
-        rootViewController.dismiss(animated: true)
-        delegate?.didCancel()
+        cancel()
     }
     
     func didTapStart() {
@@ -66,11 +79,12 @@ extension SignupCoordinator: UsernameViewControllerDelegate {
     }
     
     func didTapNext(with text: String, completion: @escaping (UsernameViewData) -> Void) {
-        guard let waitingViewController = loadViewController(named: "waiting") as? WaitingViewController else { return }
-        progress(to: waitingViewController)
+        
+        showLoading()
 
         usernameInteractor.submitUsername(text: text) { [weak self] submitStatus in
             guard let `self` = self else { return }
+            self.hideLoading()
             switch submitStatus {
             case .success:
                 self.success()
@@ -80,8 +94,18 @@ extension SignupCoordinator: UsernameViewControllerDelegate {
         }
     }
     
+    private func showLoading() {
+        let alert = UIAlertController(title: "Submitting...", message: nil, preferredStyle: .alert)
+        navigationController?.present(alert, animated: true)
+    }
+    
+    private func hideLoading() {
+        navigationController?.dismiss(animated: true)
+    }
+    
     func success() {
         guard let completeViewController = loadViewController(named: "complete") as? CompleteViewController else { return }
+        completeViewController.navigationItem.setHidesBackButton(true, animated: true)
         completeViewController.delegate = self
         progress(to: completeViewController)
     }
@@ -89,6 +113,7 @@ extension SignupCoordinator: UsernameViewControllerDelegate {
     func error(_ error: UsernameInteractor.Error) {
         guard let errorViewController = loadViewController(named: "error") as? ErrorViewController else { return }
         errorViewController.message = errorPresenter.prepare(error: error)
+        errorViewController.navigationItem.setHidesBackButton(true, animated: true)
         errorViewController.delegate = self
         progress(to: errorViewController)
     }
@@ -97,15 +122,13 @@ extension SignupCoordinator: UsernameViewControllerDelegate {
 extension SignupCoordinator: ErrorViewControllerDelegate {
     
     func didTapRestart() {
-        rootViewController.dismiss(animated: false)
-        start()
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
 extension SignupCoordinator: CompleteViewControllerDelegate {
 
     func didTapDone() {
-        rootViewController.dismiss(animated: true)
-        delegate?.didSucceed()
+        complete()
     }
 }
