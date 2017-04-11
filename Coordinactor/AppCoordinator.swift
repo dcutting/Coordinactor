@@ -17,23 +17,19 @@ class AppCoordinator {
         welcomeViewController?.delegate = self
         window.rootViewController = welcomeViewController
     }
-
-    func startSignup() {
-        guard let rootViewController = welcomeViewController else { return }
-        signupCoordinator = SignupCoordinator(rootViewController: rootViewController)
-        signupCoordinator?.delegate = self
-        signupCoordinator?.start()
-    }
-
-    func finishSignup() {
-        signupCoordinator = nil
-    }
 }
 
 extension AppCoordinator: WelcomeViewControllerDelegate {
     
     func didTapSignup() {
         startSignup()
+    }
+
+    private func startSignup() {
+        guard let rootViewController = welcomeViewController else { return }
+        signupCoordinator = SignupCoordinator(rootViewController: rootViewController)
+        signupCoordinator?.delegate = self
+        signupCoordinator?.start()
     }
 }
 
@@ -45,5 +41,9 @@ extension AppCoordinator: SignupCoordinatorDelegate {
     
     func didSucceed() {
         finishSignup()
+    }
+
+    private func finishSignup() {
+        signupCoordinator = nil
     }
 }

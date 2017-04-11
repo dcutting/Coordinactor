@@ -24,6 +24,7 @@
 		C8D247231E9CE58100FEA17C /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */; };
 		C8D2472C1E9CEBE100FEA17C /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2472B1E9CEBE100FEA17C /* SignupService.swift */; };
 		C8D2472E1E9CEE2700FEA17C /* MockSignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2472D1E9CEE2700FEA17C /* MockSignupService.swift */; };
+		C8D247391E9D2CB000FEA17C /* UsernameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247381E9D2CB000FEA17C /* UsernameCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		C8D2472B1E9CEBE100FEA17C /* SignupService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
 		C8D2472D1E9CEE2700FEA17C /* MockSignupService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignupService.swift; sourceTree = "<group>"; };
+		C8D247381E9D2CB000FEA17C /* UsernameCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		C8D247251E9CE6A200FEA17C /* Username */ = {
 			isa = PBXGroup;
 			children = (
+				C8D247381E9D2CB000FEA17C /* UsernameCoordinator.swift */,
 				C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */,
 				C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */,
 				C8D247201E9CC59B00FEA17C /* UsernamePresenter.swift */,
@@ -248,6 +251,7 @@
 				C8D2472C1E9CEBE100FEA17C /* SignupService.swift in Sources */,
 				C8D2471B1E9BD55700FEA17C /* AppCoordinator.swift in Sources */,
 				C8D2470F1E9BD12900FEA17C /* UsernameViewController.swift in Sources */,
+				C8D247391E9D2CB000FEA17C /* UsernameCoordinator.swift in Sources */,
 				C8D2471F1E9BE81800FEA17C /* UsernameInteractor.swift in Sources */,
 				C8D246FD1E9BCF9200FEA17C /* AppDelegate.swift in Sources */,
 				C8D247211E9CC59B00FEA17C /* UsernamePresenter.swift in Sources */,
