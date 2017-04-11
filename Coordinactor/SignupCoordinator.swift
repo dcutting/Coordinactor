@@ -48,8 +48,13 @@ extension SignupCoordinator: SignupViewControllerDelegate {
 
 extension SignupCoordinator: UsernameViewControllerDelegate {
     
-    func didChangeUsername(to text: String) {
-        print(text)
+    func didChangeUsername(to text: String, completion: (UsernameViewData) -> Void) {
+        let interactor = UsernameInteractor()
+        interactor.udpateUsername(text: text) { status in
+            let presenter = UsernamePresenter()
+            let viewData = presenter.prepare(status: status)
+            completion(viewData)
+        }
     }
     
     func didTapNext() {
