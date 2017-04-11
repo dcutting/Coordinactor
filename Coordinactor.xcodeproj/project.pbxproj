@@ -75,23 +75,79 @@
 			isa = PBXGroup;
 			children = (
 				C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */,
-				C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */,
-				C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */,
-				C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */,
-				C8D247181E9BD25900FEA17C /* SignupViewController.swift */,
-				C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */,
-				C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */,
-				C8D247201E9CC59B00FEA17C /* UsernamePresenter.swift */,
-				C8D247141E9BD13A00FEA17C /* WaitingViewController.swift */,
-				C8D247121E9BD13600FEA17C /* ErrorViewController.swift */,
-				C8D247161E9BD14100FEA17C /* CompleteViewController.swift */,
+				C8D2472A1E9CE6CE00FEA17C /* App */,
+				C8D247241E9CE69400FEA17C /* Sign up */,
 				C8D247001E9BCF9200FEA17C /* Main.storyboard */,
 				C8D247031E9BCF9200FEA17C /* Assets.xcassets */,
 				C8D247051E9BCF9200FEA17C /* LaunchScreen.storyboard */,
 				C8D247081E9BCF9200FEA17C /* Info.plist */,
-				C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */,
 			);
 			path = Coordinactor;
+			sourceTree = "<group>";
+		};
+		C8D247241E9CE69400FEA17C /* Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */,
+				C8D247291E9CE6BE00FEA17C /* Start */,
+				C8D247251E9CE6A200FEA17C /* Username */,
+				C8D247271E9CE6B200FEA17C /* Waiting */,
+				C8D247261E9CE6AC00FEA17C /* Error */,
+				C8D247281E9CE6B600FEA17C /* Complete */,
+			);
+			name = "Sign up";
+			sourceTree = "<group>";
+		};
+		C8D247251E9CE6A200FEA17C /* Username */ = {
+			isa = PBXGroup;
+			children = (
+				C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */,
+				C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */,
+				C8D247201E9CC59B00FEA17C /* UsernamePresenter.swift */,
+			);
+			name = Username;
+			sourceTree = "<group>";
+		};
+		C8D247261E9CE6AC00FEA17C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C8D247121E9BD13600FEA17C /* ErrorViewController.swift */,
+				C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
+		C8D247271E9CE6B200FEA17C /* Waiting */ = {
+			isa = PBXGroup;
+			children = (
+				C8D247141E9BD13A00FEA17C /* WaitingViewController.swift */,
+			);
+			name = Waiting;
+			sourceTree = "<group>";
+		};
+		C8D247281E9CE6B600FEA17C /* Complete */ = {
+			isa = PBXGroup;
+			children = (
+				C8D247161E9BD14100FEA17C /* CompleteViewController.swift */,
+			);
+			name = Complete;
+			sourceTree = "<group>";
+		};
+		C8D247291E9CE6BE00FEA17C /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				C8D247181E9BD25900FEA17C /* SignupViewController.swift */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
+		C8D2472A1E9CE6CE00FEA17C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */,
+				C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

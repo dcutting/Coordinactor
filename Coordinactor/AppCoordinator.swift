@@ -40,12 +40,10 @@ extension AppCoordinator: WelcomeViewControllerDelegate {
 extension AppCoordinator: SignupCoordinatorDelegate {
     
     func didCancel() {
-        print("cancelled signup")
         finishSignup()
     }
     
     func didSucceed() {
-        print("successfully completed signup")
         finishSignup()
     }
 }
