@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C86187441E9E1191007F9788 /* SignupCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187431E9E1191007F9788 /* SignupCoordinatorTests.swift */; };
+		C861874C1E9E274B007F9788 /* CompleteWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861874B1E9E274B007F9788 /* CompleteWireframe.swift */; };
+		C861874E1E9E2984007F9788 /* UIStoryboard+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861874D1E9E2984007F9788 /* UIStoryboard+Helpers.swift */; };
+		C86187511E9E2F8A007F9788 /* ErrorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187501E9E2F8A007F9788 /* ErrorWireframe.swift */; };
+		C86187531E9E3002007F9788 /* StartWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187521E9E3002007F9788 /* StartWireframe.swift */; };
+		C86187551E9E3063007F9788 /* UsernameWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187541E9E3063007F9788 /* UsernameWireframe.swift */; };
 		C8D246FD1E9BCF9200FEA17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */; };
 		C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */; };
 		C8D247021E9BCF9200FEA17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D247001E9BCF9200FEA17C /* Main.storyboard */; };
@@ -41,6 +46,11 @@
 		C86187411E9E1191007F9788 /* CoordinactorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinactorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86187431E9E1191007F9788 /* SignupCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinatorTests.swift; sourceTree = "<group>"; };
 		C86187451E9E1191007F9788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C861874B1E9E274B007F9788 /* CompleteWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteWireframe.swift; sourceTree = "<group>"; };
+		C861874D1E9E2984007F9788 /* UIStoryboard+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Helpers.swift"; sourceTree = "<group>"; };
+		C86187501E9E2F8A007F9788 /* ErrorWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWireframe.swift; sourceTree = "<group>"; };
+		C86187521E9E3002007F9788 /* StartWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartWireframe.swift; sourceTree = "<group>"; };
+		C86187541E9E3063007F9788 /* UsernameWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameWireframe.swift; sourceTree = "<group>"; };
 		C8D246F91E9BCF9200FEA17C /* Coordinactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,14 @@
 			path = CoordinactorTests;
 			sourceTree = "<group>";
 		};
+		C861874F1E9E2991007F9788 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C861874D1E9E2984007F9788 /* UIStoryboard+Helpers.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		C8D246F01E9BCF9200FEA17C = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +132,7 @@
 				C8D2472A1E9CE6CE00FEA17C /* App */,
 				C8D247241E9CE69400FEA17C /* Sign up */,
 				C8D2472F1E9CEE2C00FEA17C /* Services */,
+				C861874F1E9E2991007F9788 /* Helpers */,
 				C8D247001E9BCF9200FEA17C /* Main.storyboard */,
 				C8D247031E9BCF9200FEA17C /* Assets.xcassets */,
 				C8D247051E9BCF9200FEA17C /* LaunchScreen.storyboard */,
@@ -138,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C8D247381E9D2CB000FEA17C /* UsernameCoordinator.swift */,
+				C86187541E9E3063007F9788 /* UsernameWireframe.swift */,
 				C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */,
 				C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */,
 				C8D247201E9CC59B00FEA17C /* UsernamePresenter.swift */,
@@ -148,6 +168,7 @@
 		C8D247261E9CE6AC00FEA17C /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				C86187501E9E2F8A007F9788 /* ErrorWireframe.swift */,
 				C8D247121E9BD13600FEA17C /* ErrorViewController.swift */,
 				C8D247221E9CE58000FEA17C /* ErrorPresenter.swift */,
 			);
@@ -157,6 +178,7 @@
 		C8D247281E9CE6B600FEA17C /* Complete */ = {
 			isa = PBXGroup;
 			children = (
+				C861874B1E9E274B007F9788 /* CompleteWireframe.swift */,
 				C8D247161E9BD14100FEA17C /* CompleteViewController.swift */,
 			);
 			name = Complete;
@@ -165,6 +187,7 @@
 		C8D247291E9CE6BE00FEA17C /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				C86187521E9E3002007F9788 /* StartWireframe.swift */,
 				C8D247181E9BD25900FEA17C /* StartViewController.swift */,
 			);
 			name = Start;
@@ -302,14 +325,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */,
+				C86187531E9E3002007F9788 /* StartWireframe.swift in Sources */,
 				C8D2472E1E9CEE2700FEA17C /* MockSignupService.swift in Sources */,
+				C86187551E9E3063007F9788 /* UsernameWireframe.swift in Sources */,
 				C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */,
 				C8D247191E9BD25900FEA17C /* StartViewController.swift in Sources */,
 				C8D247131E9BD13600FEA17C /* ErrorViewController.swift in Sources */,
 				C8D247231E9CE58100FEA17C /* ErrorPresenter.swift in Sources */,
+				C861874C1E9E274B007F9788 /* CompleteWireframe.swift in Sources */,
+				C86187511E9E2F8A007F9788 /* ErrorWireframe.swift in Sources */,
 				C8D247171E9BD14100FEA17C /* CompleteViewController.swift in Sources */,
 				C8D2472C1E9CEBE100FEA17C /* SignupService.swift in Sources */,
 				C8D2471B1E9BD55700FEA17C /* AppCoordinator.swift in Sources */,
+				C861874E1E9E2984007F9788 /* UIStoryboard+Helpers.swift in Sources */,
 				C8D2470F1E9BD12900FEA17C /* UsernameViewController.swift in Sources */,
 				C8D247391E9D2CB000FEA17C /* UsernameCoordinator.swift in Sources */,
 				C8D2471F1E9BE81800FEA17C /* UsernameInteractor.swift in Sources */,

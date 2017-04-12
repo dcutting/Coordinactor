@@ -17,9 +17,7 @@ class UsernameCoordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "username") as? UsernameViewController else { preconditionFailure() }
-        self.viewController = viewController
+        viewController = UsernameWireframe().make()
         viewController.delegate = self
     }
 

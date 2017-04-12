@@ -16,7 +16,7 @@ class SignupCoordinator {
     
     init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
-        guard let startViewController = loadViewController(named: "signup") as? StartViewController else { preconditionFailure() }
+        let startViewController = StartWireframe().make()
         startViewController.delegate = self
         navigationController.viewControllers = [startViewController]
     }
@@ -27,11 +27,6 @@ class SignupCoordinator {
 }
 
 extension SignupCoordinator {
-    
-    fileprivate func loadViewController(named name: String) -> UIViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: name)
-    }
     
     fileprivate func presentSignup() {
         rootViewController.present(navigationController, animated: true)
@@ -84,7 +79,7 @@ extension SignupCoordinator: UsernameCoordinatorDelegate {
     }
     
     private func showCompleteScreen() {
-        guard let completeViewController = loadViewController(named: "complete") as? CompleteViewController else { return }
+        let completeViewController = CompleteWireframe().make()
         completeViewController.navigationItem.setHidesBackButton(true, animated: true)
         completeViewController.delegate = self
         progress(to: completeViewController)
@@ -95,7 +90,7 @@ extension SignupCoordinator: UsernameCoordinatorDelegate {
     }
     
     private func showErrorScreen(error: Error) {
-        guard let errorViewController = loadViewController(named: "error") as? ErrorViewController else { return }
+        let errorViewController = ErrorWireframe().make()
         errorViewController.message = ErrorPresenter().prepare(error: error)
         errorViewController.navigationItem.setHidesBackButton(true, animated: true)
         errorViewController.delegate = self
