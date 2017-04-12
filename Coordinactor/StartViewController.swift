@@ -1,13 +1,13 @@
 import UIKit
 
-protocol SignupViewControllerDelegate: class {
+protocol StartViewControllerDelegate: class {
     func didTapCancel()
     func didTapStart()
 }
 
-class SignupViewController: UIViewController {
+class StartViewController: UIViewController {
     
-    weak var delegate: SignupViewControllerDelegate?
+    weak var delegate: StartViewControllerDelegate?
     
     @IBAction func didTapCancel(_ sender: Any) {
         delegate?.didTapCancel()

@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-1578" y="80"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="signup" id="BYZ-38-t0r" customClass="SignupViewController" customModule="Coordinactor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signup" id="BYZ-38-t0r" customClass="StartViewController" customModule="Coordinactor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

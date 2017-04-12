@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C86187441E9E1191007F9788 /* SignupCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187431E9E1191007F9788 /* SignupCoordinatorTests.swift */; };
 		C8D246FD1E9BCF9200FEA17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */; };
 		C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */; };
 		C8D247021E9BCF9200FEA17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D247001E9BCF9200FEA17C /* Main.storyboard */; };
@@ -15,7 +16,7 @@
 		C8D2470F1E9BD12900FEA17C /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */; };
 		C8D247131E9BD13600FEA17C /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247121E9BD13600FEA17C /* ErrorViewController.swift */; };
 		C8D247171E9BD14100FEA17C /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247161E9BD14100FEA17C /* CompleteViewController.swift */; };
-		C8D247191E9BD25900FEA17C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247181E9BD25900FEA17C /* SignupViewController.swift */; };
+		C8D247191E9BD25900FEA17C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247181E9BD25900FEA17C /* StartViewController.swift */; };
 		C8D2471B1E9BD55700FEA17C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */; };
 		C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */; };
 		C8D2471F1E9BE81800FEA17C /* UsernameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */; };
@@ -26,7 +27,20 @@
 		C8D247391E9D2CB000FEA17C /* UsernameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D247381E9D2CB000FEA17C /* UsernameCoordinator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C86187461E9E1191007F9788 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8D246F11E9BCF9200FEA17C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8D246F81E9BCF9200FEA17C;
+			remoteInfo = Coordinactor;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C86187411E9E1191007F9788 /* CoordinactorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinactorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86187431E9E1191007F9788 /* SignupCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinatorTests.swift; sourceTree = "<group>"; };
+		C86187451E9E1191007F9788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8D246F91E9BCF9200FEA17C /* Coordinactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +51,7 @@
 		C8D2470E1E9BD12900FEA17C /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		C8D247121E9BD13600FEA17C /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		C8D247161E9BD14100FEA17C /* CompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
-		C8D247181E9BD25900FEA17C /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C8D247181E9BD25900FEA17C /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C8D2471A1E9BD55700FEA17C /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C8D2471C1E9BD56000FEA17C /* SignupCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 		C8D2471E1E9BE81800FEA17C /* UsernameInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameInteractor.swift; sourceTree = "<group>"; };
@@ -49,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C861873E1E9E1191007F9788 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8D246F61E9BCF9200FEA17C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,10 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C86187421E9E1191007F9788 /* CoordinactorTests */ = {
+			isa = PBXGroup;
+			children = (
+				C86187431E9E1191007F9788 /* SignupCoordinatorTests.swift */,
+				C86187451E9E1191007F9788 /* Info.plist */,
+			);
+			path = CoordinactorTests;
+			sourceTree = "<group>";
+		};
 		C8D246F01E9BCF9200FEA17C = {
 			isa = PBXGroup;
 			children = (
 				C8D246FB1E9BCF9200FEA17C /* Coordinactor */,
+				C86187421E9E1191007F9788 /* CoordinactorTests */,
 				C8D246FA1E9BCF9200FEA17C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C8D246F91E9BCF9200FEA17C /* Coordinactor.app */,
+				C86187411E9E1191007F9788 /* CoordinactorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,7 +165,7 @@
 		C8D247291E9CE6BE00FEA17C /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				C8D247181E9BD25900FEA17C /* SignupViewController.swift */,
+				C8D247181E9BD25900FEA17C /* StartViewController.swift */,
 			);
 			name = Start;
 			sourceTree = "<group>";
@@ -159,6 +191,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C86187401E9E1191007F9788 /* CoordinactorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C861874A1E9E1191007F9788 /* Build configuration list for PBXNativeTarget "CoordinactorTests" */;
+			buildPhases = (
+				C861873D1E9E1191007F9788 /* Sources */,
+				C861873E1E9E1191007F9788 /* Frameworks */,
+				C861873F1E9E1191007F9788 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C86187471E9E1191007F9788 /* PBXTargetDependency */,
+			);
+			name = CoordinactorTests;
+			productName = CoordinactorTests;
+			productReference = C86187411E9E1191007F9788 /* CoordinactorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C8D246F81E9BCF9200FEA17C /* Coordinactor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8D2470B1E9BCF9200FEA17C /* Build configuration list for PBXNativeTarget "Coordinactor" */;
@@ -186,6 +236,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Dan Cutting";
 				TargetAttributes = {
+					C86187401E9E1191007F9788 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = J6LY6992AF;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C8D246F81E9BCF9200FEA17C;
+					};
 					C8D246F81E9BCF9200FEA17C = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = J6LY6992AF;
@@ -207,11 +263,19 @@
 			projectRoot = "";
 			targets = (
 				C8D246F81E9BCF9200FEA17C /* Coordinactor */,
+				C86187401E9E1191007F9788 /* CoordinactorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C861873F1E9E1191007F9788 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8D246F71E9BCF9200FEA17C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +289,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C861873D1E9E1191007F9788 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C86187441E9E1191007F9788 /* SignupCoordinatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8D246F51E9BCF9200FEA17C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +304,7 @@
 				C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */,
 				C8D2472E1E9CEE2700FEA17C /* MockSignupService.swift in Sources */,
 				C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */,
-				C8D247191E9BD25900FEA17C /* SignupViewController.swift in Sources */,
+				C8D247191E9BD25900FEA17C /* StartViewController.swift in Sources */,
 				C8D247131E9BD13600FEA17C /* ErrorViewController.swift in Sources */,
 				C8D247231E9CE58100FEA17C /* ErrorPresenter.swift in Sources */,
 				C8D247171E9BD14100FEA17C /* CompleteViewController.swift in Sources */,
@@ -247,6 +319,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C86187471E9E1191007F9788 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8D246F81E9BCF9200FEA17C /* Coordinactor */;
+			targetProxy = C86187461E9E1191007F9788 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C8D247001E9BCF9200FEA17C /* Main.storyboard */ = {
@@ -268,6 +348,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C86187481E9E1191007F9788 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J6LY6992AF;
+				INFOPLIST_FILE = CoordinactorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.CoordinactorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coordinactor.app/Coordinactor";
+			};
+			name = Debug;
+		};
+		C86187491E9E1191007F9788 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J6LY6992AF;
+				INFOPLIST_FILE = CoordinactorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.CoordinactorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coordinactor.app/Coordinactor";
+			};
+			name = Release;
+		};
 		C8D247091E9BCF9200FEA17C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -390,6 +498,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C861874A1E9E1191007F9788 /* Build configuration list for PBXNativeTarget "CoordinactorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C86187481E9E1191007F9788 /* Debug */,
+				C86187491E9E1191007F9788 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C8D246F41E9BCF9200FEA17C /* Build configuration list for PBXProject "Coordinactor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

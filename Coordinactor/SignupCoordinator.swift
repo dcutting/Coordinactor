@@ -16,9 +16,9 @@ class SignupCoordinator {
     
     init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
-        guard let signupViewController = loadViewController(named: "signup") as? SignupViewController else { preconditionFailure() }
-        signupViewController.delegate = self
-        navigationController.viewControllers = [signupViewController]
+        guard let startViewController = loadViewController(named: "signup") as? StartViewController else { preconditionFailure() }
+        startViewController.delegate = self
+        navigationController.viewControllers = [startViewController]
     }
     
     func start() {
@@ -51,7 +51,7 @@ extension SignupCoordinator {
     }
 }
 
-extension SignupCoordinator: SignupViewControllerDelegate {
+extension SignupCoordinator: StartViewControllerDelegate {
     
     func didTapCancel() {
         cancelSignup()
