@@ -30,7 +30,7 @@ extension AppCoordinator: WelcomeViewControllerDelegate {
 
     private func startSignupCoordinator() {
         guard let rootViewController = window.rootViewController else { preconditionFailure() }
-        signupCoordinator = SignupCoordinator(rootViewController: rootViewController)
+        signupCoordinator = SignupCoordinator(presentingViewController: rootViewController)
         signupCoordinator?.delegate = self
         signupCoordinator?.start()
     }

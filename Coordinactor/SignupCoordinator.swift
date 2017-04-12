@@ -9,13 +9,13 @@ class SignupCoordinator {
     
     weak var delegate: SignupCoordinatorDelegate?
     
-    let rootViewController: UIViewController
+    let presentingViewController: PresentingViewController
     let navigationController = UINavigationController()
     
     var usernameCoordinator: UsernameCoordinator?
     
-    init(rootViewController: UIViewController) {
-        self.rootViewController = rootViewController
+    init(presentingViewController: PresentingViewController) {
+        self.presentingViewController = presentingViewController
         let startViewController = StartWireframe().make()
         startViewController.delegate = self
         navigationController.viewControllers = [startViewController]
@@ -29,11 +29,11 @@ class SignupCoordinator {
 extension SignupCoordinator {
     
     fileprivate func presentSignup() {
-        rootViewController.present(navigationController, animated: true)
+        presentingViewController.present(navigationController, animated: true)
     }
     
     fileprivate func dismissSignup() {
-        navigationController.dismiss(animated: true)
+        presentingViewController.dismiss(animated: true)
     }
     
     fileprivate func restartSignup() {
