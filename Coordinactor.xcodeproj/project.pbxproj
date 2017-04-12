@@ -14,6 +14,7 @@
 		C86187531E9E3002007F9788 /* StartWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187521E9E3002007F9788 /* StartWireframe.swift */; };
 		C86187551E9E3063007F9788 /* UsernameWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187541E9E3063007F9788 /* UsernameWireframe.swift */; };
 		C86187571E9E31C7007F9788 /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187561E9E31C7007F9788 /* PresentingViewController.swift */; };
+		C86187591E9E3287007F9788 /* StackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86187581E9E3287007F9788 /* StackingViewController.swift */; };
 		C8D246FD1E9BCF9200FEA17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */; };
 		C8D246FF1E9BCF9200FEA17C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */; };
 		C8D247021E9BCF9200FEA17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D247001E9BCF9200FEA17C /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		C86187521E9E3002007F9788 /* StartWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartWireframe.swift; sourceTree = "<group>"; };
 		C86187541E9E3063007F9788 /* UsernameWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameWireframe.swift; sourceTree = "<group>"; };
 		C86187561E9E31C7007F9788 /* PresentingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
+		C86187581E9E3287007F9788 /* StackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackingViewController.swift; sourceTree = "<group>"; };
 		C8D246F91E9BCF9200FEA17C /* Coordinactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D246FC1E9BCF9200FEA17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8D246FE1E9BCF9200FEA17C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				C86187561E9E31C7007F9788 /* PresentingViewController.swift */,
+				C86187581E9E3287007F9788 /* StackingViewController.swift */,
 				C861874D1E9E2984007F9788 /* UIStoryboard+Helpers.swift */,
 			);
 			name = Helpers;
@@ -331,6 +334,7 @@
 				C86187531E9E3002007F9788 /* StartWireframe.swift in Sources */,
 				C8D2472E1E9CEE2700FEA17C /* MockSignupService.swift in Sources */,
 				C86187571E9E31C7007F9788 /* PresentingViewController.swift in Sources */,
+				C86187591E9E3287007F9788 /* StackingViewController.swift in Sources */,
 				C86187551E9E3063007F9788 /* UsernameWireframe.swift in Sources */,
 				C8D2471D1E9BD56000FEA17C /* SignupCoordinator.swift in Sources */,
 				C8D247191E9BD25900FEA17C /* StartViewController.swift in Sources */,
@@ -537,6 +541,7 @@
 				C86187491E9E1191007F9788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8D246F41E9BCF9200FEA17C /* Build configuration list for PBXProject "Coordinactor" */ = {
 			isa = XCConfigurationList;

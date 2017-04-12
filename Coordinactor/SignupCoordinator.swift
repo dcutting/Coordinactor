@@ -10,15 +10,16 @@ class SignupCoordinator {
     weak var delegate: SignupCoordinatorDelegate?
     
     let presentingViewController: PresentingViewController
-    let navigationController = UINavigationController()
+    var stackingViewController: StackingViewController
     
     var usernameCoordinator: UsernameCoordinator?
     
     init(presentingViewController: PresentingViewController) {
         self.presentingViewController = presentingViewController
         let startViewController = StartWireframe().make()
+        stackingViewController = UINavigationController()
+        stackingViewController.viewControllers = [startViewController]
         startViewController.delegate = self
-        navigationController.viewControllers = [startViewController]
     }
     
     func start() {
@@ -29,20 +30,20 @@ class SignupCoordinator {
 extension SignupCoordinator {
     
     fileprivate func presentSignup() {
-        presentingViewController.present(navigationController, animated: true)
+        presentingViewController.present(stackingViewController, animated: true, completion: nil)
     }
     
     fileprivate func dismissSignup() {
-        presentingViewController.dismiss(animated: true)
+        presentingViewController.dismiss(animated: true, completion: nil)
     }
     
     fileprivate func restartSignup() {
         finishUsernameCoordinator()
-        navigationController.popToRootViewController(animated: true)
+        stackingViewController.popToRootViewController(animated: true)
     }
     
     fileprivate func progress(to viewController: UIViewController) {
-        navigationController.pushViewController(viewController, animated: true)
+        stackingViewController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -62,7 +63,7 @@ extension SignupCoordinator: StartViewControllerDelegate {
     }
     
     private func startUsernameCoordinator() {
-        usernameCoordinator = UsernameCoordinator(navigationController: navigationController)
+        usernameCoordinator = UsernameCoordinator(stackingViewController: stackingViewController)
         usernameCoordinator?.delegate = self
         usernameCoordinator?.start()
     }

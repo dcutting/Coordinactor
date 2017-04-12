@@ -9,14 +9,14 @@ class UsernameCoordinator {
     
     weak var delegate: UsernameCoordinatorDelegate?
     
-    let navigationController: UINavigationController
+    let rootViewController: StackingViewController
     
     let interactor = UsernameInteractor(signupService: MockSignupService())
     let presenter = UsernamePresenter()
     let viewController: UsernameViewController
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(stackingViewController: StackingViewController) {
+        self.rootViewController = stackingViewController
         viewController = UsernameWireframe().make()
         viewController.delegate = self
     }
@@ -26,7 +26,7 @@ class UsernameCoordinator {
     }
     
     private func showUsernameScreen() {
-        navigationController.pushViewController(viewController, animated: true)
+        rootViewController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -72,10 +72,10 @@ extension UsernameCoordinator: UsernameViewControllerDelegate {
     
     private func showLoading() {
         let alert = UIAlertController(title: "Submitting...", message: nil, preferredStyle: .alert)
-        navigationController.present(alert, animated: true)
+        rootViewController.present(alert, animated: true, completion: nil)
     }
     
     private func hideLoading() {
-        navigationController.dismiss(animated: true)
+        rootViewController.dismiss(animated: true, completion: nil)
     }
 }
